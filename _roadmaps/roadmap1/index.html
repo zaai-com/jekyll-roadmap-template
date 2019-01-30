@@ -1,0 +1,37 @@
+---
+layout: gantt
+title: 'Jekyll Roadmap Theme'
+---
+
+<p></p>
+<div ng-app="GanttRoadmap" ng-controller="Ctrl">
+  <div gantt data="data" options="options">
+    <gantt-movable enabled="true" allow-moving="true" allow-resizing="true" allow-row-switching="true"></gantt-movable>
+    <gantt-tree enabled="true" header="Epics"></gantt-tree>
+    <gantt-table columns="['model.status', 'model.ticket']"></gantt-table>
+    <gantt-groups enabled="false" display="none"></gantt-groups>
+    <gantt-tooltips delay="0" ></gantt-tooltips>
+  </div>
+</div>
+<p></p>
+
+<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script type='text/javascript' src="https://cdn.jsdelivr.net/momentjs/latest/moment-with-locales.min.js"></script>
+<script type='text/javascript' src="https://cdn.jsdelivr.net/angular.moment/latest/angular-moment.min.js"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/moment-range/2.1.0/moment-range.min.js"></script>
+
+<script type='text/javascript' src="https://rawgit.com/JimLiu/angular-ui-tree/master/dist/angular-ui-tree.js"></script>
+
+<script type='text/javascript' src="https://cdn.jsdelivr.net/angular.gantt/1.2.11/angular-gantt.min.js"></script>
+<script type='text/javascript' src="https://cdn.jsdelivr.net/angular.gantt/1.2.11/angular-gantt-plugins.min.js"></script>
+
+<script type='text/javascript' src="data.js"></script>
+<script type='text/javascript' src="options.js"></script>
+<script type='text/javascript' src="/assets/js/ag.js"></script>
+
+<script type='text/javascript'>
+app.controller('Ctrl', ['$scope', function ($scope) {
+  $scope.data = roadmapData;
+  $scope.options = roadmapOptions;
+}]);
+</script>

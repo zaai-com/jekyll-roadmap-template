@@ -1,0 +1,9 @@
+title: Jekyll Roadmap Example
+email: jr@manuelgruber.com
+description: Jekyll Roadmap Example
+
+theme: jekyll-roadmap
+
+collections:
+  roadmaps:
+    output: true
